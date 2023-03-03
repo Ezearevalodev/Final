@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tienda de Doritos - Variedad de sabores y presentaciones | Compra ahora</title>
+
+    <!-- Information -->
+    <meta name="description" content="Encuentra aquí la mayor variedad de sabores y presentaciones de Doritos. ¡Compra ahora tus favoritos!">
+    <meta name="keywords" content="Doritos, tienda de Doritos, comprar Doritos, snacks, botanas, chips">
+    <meta name="author" content="Ezequiel Thomas Arevalo">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./res/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./res/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./res/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./res/img/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./res/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./res/img/favicon/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="Doritou">
+    <meta name="application-name" content="Doritou">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="./res/img/favicon/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="URL_DE_LA_PÁGINA">
+    <meta property="og:title" content="Tienda de Doritos - Variedad de sabores y presentaciones | Compra ahora">
+    <meta property="og:description" content="Encuentra aquí la mayor variedad de sabores y presentaciones de Doritos. ¡Compra ahora tus favoritos!">
+    <meta property="og:image" content="URL_DE_LA_IMAGEN">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="URL_DE_LA_PÁGINA">
+    <meta name="twitter:title" content="Tienda de Doritos - Variedad de sabores y presentaciones | Compra ahora">
+    <meta name="twitter:description" content="Encuentra aquí la mayor variedad de sabores y presentaciones de Doritos. ¡Compra ahora tus favoritos!">
+    <meta name="twitter:image" content="URL_DE_LA_IMAGEN">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./res/css/styles.css" />
+
+    <!--JS-->
+    <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js" defer ></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" defer ></script>
+    <script src="./res/js/productos.js" defer></script>
+    <script src="./res/js/app.js" defer></script>
+  
+  </head>
+
+  <body>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Carrito de compras
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="minicarrito" class="mt-4 mb-4">
+              <div class="card w-50 m-auto">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <span id="contadorCantidad">0</span> ítems agregados
+                  </li>
+                  <li class="list-group-item">
+                    $<span id="contadorPrecio">0</span> es el total
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">Continuar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="res/img/logo/logo.gif" alt="" width="150" height="50"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown categorias">
+                <a class="nav-link dropdown-toggle categoria-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
+                <ul class="dropdown-menu categorias">
+                  <li>
+                    <a class="dropdown-item categoria-btn" href="#" data-categoria="todo">Todo</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item categoria-btn" href="#" data-categoria="normal">Normal</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item categoria-btn" href="#"  data-categoria="picante">Picante</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item categoria-btn" href="#" data-categoria="suave">Suave</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 20 20">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" ></path>
+                  </svg>
+                  Carrito
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="./res/img/banners/Promo1.png" class="d-block w-100" style="min-height: 300px" alt="alt"/>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="./res/img/banners/Promo2.png" class="d-block w-100" style="min-height: 300px" alt="alt"/>
+          </div>
+          <div class="carousel-item">
+            <img src="./res/img/banners/Promo3.jpg" class="d-block w-100" style="min-height: 300px" alt="alt"/>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </header>
+    <main class="bg-secondary">
+      <div class="container p-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 productos">
+          <!--Generación de productos-->
+        </div>
+      </div>
+    </main>
+    <footer class="p-5">
+      <p class="text-center text-muted">
+        Todos los derechos reservados &copy; 2023 | <a href="#" target="_blank">@Ezearevalodev</a>
+      </p>
+    </footer>
+  </body>
+</html>
