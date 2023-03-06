@@ -1,112 +1,147 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  html{
-    scroll-behavior: smooth;
-    user-select: none;
-  }
-  
-  /* Scrollbar */
-  ::-webkit-scrollbar {
-    width: .45rem;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(27, 27, 27, .4);
-    -webkit-border-radius: 3px;
-            border-radius: 3px;
-  }
-  ::-webkit-scrollbar-track{
-    background: transparent;
-  }
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 400 version
+*/
 
-main{
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: .45rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(27, 27, 27, .4);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+main {
   min-height: 685.5px;
 }
 
 /*Botones de agregar al carrito*/
 .addToCart {
-    display: inline-block;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    color: #090909;
-    padding: 0.7em 1.5em;
-    font-size: 15px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    -webkit-box-shadow: 6px 6px 12px #c5c5c5,
-               -6px -6px 12px #ffffff;
-            box-shadow: 6px 6px 12px #c5c5c5,
-               -6px -6px 12px #ffffff;
-  }
-  
-  .addToCart:active {
-    color: #666;
-    -webkit-box-shadow: inset 4px 4px 12px #c5c5c5,
-               inset -4px -4px 12px #ffffff;
-            box-shadow: inset 4px 4px 12px #c5c5c5,
-               inset -4px -4px 12px #ffffff;
-  }
-  
-  .addToCart:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%) scaleY(1) scaleX(1.25);
-        -ms-transform: translateX(-50%) scaleY(1) scaleX(1.25);
-            transform: translateX(-50%) scaleY(1) scaleX(1.25);
-    top: 100%;
-    width: 140%;
-    height: 180%;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    display: block;
-    -webkit-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-  }
-  
-  .addToCart:after {
-    content: "";
-    position: absolute;
-    left: 55%;
-    -webkit-transform: translateX(-50%) scaleY(1) scaleX(1.45);
-        -ms-transform: translateX(-50%) scaleY(1) scaleX(1.45);
-            transform: translateX(-50%) scaleY(1) scaleX(1.45);
-    top: 180%;
-    width: 160%;
-    height: 190%;
-    background-color: #009087;
-    border-radius: 50%;
-    display: block;
-    -webkit-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-  }
-  
-  .addToCart:hover {
-    color: #ffffff;
-    border: 1px solid #009087;
-  }
-  
-  .addToCart:hover:before {
-    top: -35%;
-    background-color: #009087;
-    -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-        -ms-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-  }
-  
-  .addToCart:hover:after {
-    top: -45%;
-    background-color: #009087;
-    -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-        -ms-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-  }
-  
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #090909;
+  padding: 0.7em 1.5em;
+  font-size: 15px;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  -webkit-box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  -moz-box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+  box-shadow: 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+}
+
+.addToCart:active {
+  color: #666;
+  -webkit-box-shadow: inset 4px 4px 12px #c5c5c5,
+    inset -4px -4px 12px #ffffff;
+  -moz-box-shadow: inset 4px 4px 12px #c5c5c5,
+    inset -4px -4px 12px #ffffff;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+    inset -4px -4px 12px #ffffff;
+}
+
+.addToCart:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  -ms-transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  -moz-transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  -o-transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  -webkit-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  -o-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  -moz-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.addToCart:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  -webkit-transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  -ms-transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  -moz-transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  -o-transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #009087;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: block;
+  -webkit-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  -o-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  -moz-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.addToCart:hover {
+  color: #ffffff;
+  border: 1px solid #009087;
+}
+
+.addToCart:hover:before {
+  top: -35%;
+  background-color: #009087;
+  -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  -ms-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  -moz-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  -o-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.addToCart:hover:after {
+  top: -45%;
+  background-color: #009087;
+  -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  -ms-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  -moz-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  -o-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
