@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,14 +60,19 @@
 </head>
 
 <body>
-  <!--Ventana Modal 1 (PRODUCTOS EN EL CARRITO)-->
+  <!--Inicio Ventana Modal 1 (PRODUCTOS EN EL CARRITO) //TODO IMPLEMENTAR CARRITO DE COMPRAS-->
   <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
+
+        <!--Modal Header-->
         <div class="modal-header">
           <h5 class="modal-title ms-auto text-center" id="modal1Label">Productos en el carrito</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <!--Modal Header-->
+
+        <!--Modal Body-->
         <div class="modal-body">
           <table class="table">
             <thead>
@@ -78,44 +82,62 @@
                 <th scope="col" colspan="2" class="text-center">Cantidad</th>
               </tr>
             </thead>
-            <tbody id="modal1-body">
-              <!--PRODUCTOS-->
-            </tbody>
+            <!--Minicarrito (Carga de productos)-->
+            <tbody id="modal1-body"></tbody>
           </table>
         </div>
+        <!--Modal Body-->
+
+        <!--Modal Footer-->
         <div class="modal-footer">
-          <div>PRECIO TOTAL: <span id="PrecioTotal">ASD</span></div>
+          <div>PRECIO TOTAL: <span id="PrecioTotal">{0}</span></div>
+          <!--Modal 2-->
           <button type="button" class="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal"
             data-bs-dismiss="modal" data-modal="modal2">Next</button>
         </div>
+        <!--Modal Footer-->
       </div>
     </div>
   </div>
+  <!--Fin Ventana Modal 1 (PRODUCTOS EN EL CARRITO) //TODO AÑADIR PAGINADO ENTRE MODAL´S-->
 
-  <!--Ventana Modal 2 (FORMULARIO)-->
+  <!--Inicio Ventana Modal 2 (FORMULARIO) //TODO AÑADIR VALIDACIÓN DEL FORMULARIO-->
   <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
+
+        <!--Modal Header-->
         <div class="modal-header">
           <h5 class="modal-title ms-auto text-center" id="modal2Label">Datos de envio</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <!--Modal Header-->
+        
+        <!--Modal Body-->
         <div class="modal-body">
           <form class="row g-2 needs-validation" novalidate>
+            
+            <!--Formulario de Nombre-->
             <div class="col-md-6 position-relative">
               <label for="validationTooltip01" class="form-label">Nombre: </label>
               <input type="text" class="form-control" id="validationTooltip01" required>
             </div>
+
+            <!--Formulario de Apellido-->
             <div class="col-md-6 position-relative">
               <label for="validationTooltip02" class="form-label">Apellido: </label>
               <input type="text" class="form-control" id="validationTooltip02" required>
             </div>
+
+            <!--Formulario de Email-->
             <div class="col-md-12 position-relative">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
               <input type="email" class="form-control" id="exampleInputEmail1">
             </div>
+
+            <!--Formulario tipo select de la Cuidad-->
             <div class="col-md-3 position-relative">
-              <label for="validationTooltip03" class="form-label">Ciudad: </label>
+              <label for="validationTooltip03" class="form-label">Ciudad</label>
               <select class="form-select" id="validationTooltip03" required>
                 <option value="">...</option>
                 <option value="CABA">CABA</option>
@@ -152,74 +174,111 @@
                 <option value="Villa Mercedes">Villa Mercedes</option>
               </select>
             </div>
+
+            <!--Formulario de Codigo Postal-->
             <div class="col-md-3 position-relative">
               <label for="validationTooltip05" class="form-label">CP: </label>
               <input type="number" class="form-control" id="validationTooltip05" required>
             </div>
+
+            <!--Formulario de Numero de tarjeta-->
             <div class="col-md-12 position-relative">
               <label for="cc-number" class="form-label">Numeros de su tarjeta</label>
               <input type="text" class="form-control" id="cc-number" placeholder="" maxlength="16" required>
             </div>
+
+            <!--Formulario de Fecha de Expiración-->
             <div class="col-md-6 position-relative">
               <label for="cc-expiration" class="form-label">Fecha de Expiración</label>
               <input type="month" class="form-control" id="cc-expiration" min="2022-12" max="2030-12" required>
             </div>
+
+            <!--Formulario de Codigo de Seguirdad-->
             <div class="col-md-6 position-relative">
               <label for="cc-cvv" class="form-label">CVV</label>
               <input type="number" class="form-control" id="cc-cvv" placeholder="" required>
             </div>
+
+            <!--Formulario tipo checkbox de los Terminos y Condiciones-->
             <div class="form-check position-relative">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">
                 Acepto los terminos y condiciones
               </label>
             </div>
+
+            <!--Boton validador del form, validation.js //TODO FIXEAR EL PAGINADO ANTES DE VALIDAR-->
             <button class="btn btn-success" type="submit">Verificar</button>
           </form>
         </div>
+        <!--Modal Body-->
+
+        <!--Modal Footer-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-target="#modal1" data-bs-toggle="modal"
-            data-bs-dismiss="modal" data-modal="modal1">Previous</button>
+          <!--Modal 1-->
+          <button type="button" class="btn btn-primary" data-bs-target="#modal1" data-bs-toggle="modal"data-bs-dismiss="modal" data-modal="modal1">Previous</button>
         </div>
+        <!--Modal Footer-->
       </div>
     </div>
   </div>
+  <!--Fin Ventana Modal 2 (FORMULARIO) //TODO Implementar el uso de PHP para probar el envio de formularios, Arreglar superposición de Modal´s-->
 
   <!--Ventana Modal 3 (GRACIAS POR TU COMPRA)-->
   <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
+
+        <!--Modal Header-->
         <div class="modal-header">
-          <h5 class="modal-title ms-auto text-center" id="modal3Label">GRACIAS POR TU COMPRA</h5>
+          <h5 class="modal-title ms-auto text-center" id="modal3Label">DORITUOU</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <!--Modal Header-->
+
+        <!--Modal Body //TODO Añadir imagen gracias por tu compra-->
         <div class="modal-body m-auto">
-          <img src="./res/img/extras/finalizado.png" alt="" loading="lazy" /> 
+          <img src="./res/img/extras/finalizado.png" alt="Imagen representativa al finalizar la compra" width="1200" height="630" loading="lazy" /> 
         </div>
+        <!--Modal Body-->
+
+        <!--Modal Footer-->
         <div class="modal-footer">
+        <!--Borra el localstorage, recarga la pagina, validation.js //TODO Añadir evento de detección del boton ("NewCarrito")-->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal" id="NewCarrito">Continuar</button>
         </div>
+        <!--Modal Footer-->
       </div>
     </div>
   </div>
 
   <!--Inicio de header-->
   <header>
+    <!--Inicio del menú de navegación //TODO Separa el nav en 2 partes, hacer el nav responsive-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
       <div class="container-fluid navbar-dark bg-dark p-2">
+
+        <!--Inicio de Logo-->
         <a class="navbar-brand" href="#">Doritos</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!--Fin de Logo-->
+
+        <!--Button Responsive-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!--Contenedor padre del nav-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
             </li>
+            <!--Inicio de las Categorias-->
             <li class="nav-item dropdown categorias">
-              <a class="nav-link active dropdown-toggle categoria-btn" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Categorias</a>
+              <!--Dropdown Principal //TODO Agregar evento listener a cada cateogira para abrir una modal custom-->
+              <a class="nav-link active dropdown-toggle categoria-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a><!-- //TODO Arreglar: Al darle click a Categorias y no selecionar nada se borran los productos-->
+              
+              <!--Dropdown-->
               <ul class="dropdown-menu categorias">
                 <li>
                   <a class="dropdown-item categoria-btn" href="#" data-categoria="todo">Todo</a>
@@ -235,11 +294,12 @@
                 </li>
               </ul>
             </li>
+            <!--Fin de las Categorias-->
+
+            <!--Inicio del boton de Carrito //TODO Añadir evento para abrir la modal 2-->
             <li class="nav-item">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1"
-                id="Modal-js">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart"
-                  viewBox="0 0 20 20">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1" id="Modal-js">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 20 20">
                   <path
                     d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
                   </path>
@@ -247,47 +307,68 @@
                 Carrito
               </button>
             </li>
+            <!--Fin del boton de Carrito-->
           </ul>
         </div>
       </div>
     </nav>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <!--Fin del menú de navegación-->
+
+    <!--Inicio del Carrousel  //TODO Arreglar el responsive de las imagenes-->
+    <div id="carouselExampleDark" class="carousel slide">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
+
+      <!--Inicio del contenedor de imagenes //TODO Revisar el responsive y modificar la carga mediante source-->
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="./res/img/banners/Promo1.png" class="d-block w-100" style="min-height: 300px" alt="alt" />
+
+        <!--Imagen 1-->
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="./res/img/banners/Promo1.png" class="d-block w-100" alt="Banner Promocional de la marca Doritos" width="1920" height="789" loading="lazy" />
         </div>
+        <!--Imagen 1-->
+
+        <!--Imagen 2-->
         <div class="carousel-item" data-bs-interval="2000">
-          <img src="./res/img/banners/Promo2.png" class="d-block w-100" style="min-height: 300px" alt="alt" />
+          <img src="./res/img/banners/Promo2.png" class="d-block w-100" alt="Banner Promocional de la marca Doritos" width="1920" height="789" loading="lazy" />
         </div>
+        <!--Imagen 2-->
+
+        <!--Imagen 3-->
         <div class="carousel-item">
-          <img src="./res/img/banners/Promo3.jpg" class="d-block w-100" style="min-height: 300px" alt="alt" />
+          <img src="./res/img/banners/Promo3.jpg" class="d-block w-100" alt="Banner Promocional de la marca Doritos" width="1920" height="789" loading="lazy" />
         </div>
+        <!--Imagen 3-->
       </div>
+      <!--Fin del contenedor de imagenes-->
+
+      <!--Boton Izquierdo-->
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
       </button>
+      
+      <!--Boton Derecho-->
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
       </button>
+
     </div>
+    <!--Fin del Carrousel-->
   </header>
+  <!--Fin del Header-->
 
   <!--Inicio de Main-->
   <main>
     <div class="container p-5">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 productos">
-        <!--Generación de productos-->
-      </div>
+      <!--Contenedor donde se generan los productos (productos)  //TODO Fixear creación de productos, creación de productos en la carga-->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 productos"></div>
+
     </div>
   </main>
+  <!--Fin de Main-->
 
   <!--Inicio del footer-->
   <footer class="p-5 bg-dark">
@@ -295,6 +376,10 @@
       Todos los derechos reservados &copy; 2023 | <a href="#" target="_blank" class="text-white">@Ezearevalodev</a>
     </p>
   </footer>
+  <!--Fin del footer-->
 </body>
-
 </html>
+<!--
+  Ultima validación del HTML 3/3/2023
+  Ultima validación del CSS 26/2/2023
+-->

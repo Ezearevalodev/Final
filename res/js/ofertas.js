@@ -5,24 +5,65 @@ lis.forEach(li => {
     const categoria = li.querySelector('.categoria-btn').getAttribute('data-categoria');
     console.log(`Has seleccionado la categoría "${categoria}"`);
 
-    // Crear el modal
+    // TODO Evitar que cuando se seleccione todo se genere una modal sin sentido
+    if (categoria === "todo") {
+      return;
+    }
+
+    // TODO Crear el modal de cada categoria y añadir su ID, categoria
     const modal = document.createElement("div");
     modal.classList.add("modal", "fade");
     modal.setAttribute("id", `modal-${categoria}`);
+    modal.setAttribute("data-bs-backdrop", "static");
+    modal.setAttribute("data-bs-keyboard", "false");
 
-    // Crear el contenido del modal
+    // TODO Crear el contenido del modal
     const modalContent = document.createElement("div");
-    modalContent.classList.add("modal-dialog");
+    modalContent.classList.add("modal-dialog", "modal-dialog-centered");
     modalContent.innerHTML = `
-      <div class="modal-content">
+      <div class="modal-content" >
         <div class="modal-header">
-          <h5 class="modal-title">${categoria.toUpperCase()}</h5>
+          <h5 class="modal-title">Has seleccionado la categoria: "${categoria.toUpperCase()}"</h5>
         </div>
         <div class="modal-body">
-          <p>Aquí puedes agregar el contenido que desees para la categoría ${categoria}.</p>
+          <div class="row">
+            <div class="col-md-12">
+              <img src="" class="img-fluid" id="producto-imagen">
+            </div>
+            <div class="col-md-12">
+              <h3>OFERTA LIMITADA</h3>
+              <p>¡Disfruta de los nuevos Doritos ${categoria} con una oferta especial por tiempo limitado! No te pierdas la oportunidad de probarlos.</p>
+              <h4>Ventajas de los nuevos Doritos ${categoria}</h4>
+              <ul>
+                <li class="list-group-item"><i class="bi bi-check"></i> Más crujientes que nunca</li>
+                <li class="list-group-item"><i class="bi bi-check"></i> Sabor más intenso</li>
+                <li class="list-group-item"><i class="bi bi-check"></i> Ahora en paquete de 200g</li>
+                <li class="list-group-item"><i class="bi bi-check"></i> Disponibles en tiendas seleccionadas</li>
+                <li class="list-group-item"><i class="bi bi-check"></i> ¡Con un toque picante que te encantará!</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     `;
+
+    // TODO Cambiar el src de la imagen del producto según la categoría
+    const productoImagen = modalContent.querySelector("#producto-imagen");
+    switch (categoria) {
+      case "suave":
+        productoImagen.src = "../../res/img/extras/Suave.png";
+        break;
+      case "normal":
+        productoImagen.src = "../../res/img/extras/Normal.png";
+        break;
+      case "picante":
+        productoImagen.src = "../../res/img/extras/Picantes.png";
+        break;
+      default:
+        console.error("Error: (Categoría no reconocida)");
+        break;
+      }
+    
 
     // Agregar el contenido al modal y al body
     modal.appendChild(modalContent);

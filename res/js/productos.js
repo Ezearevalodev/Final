@@ -1,13 +1,13 @@
 'use strict'
 
-const productos = [
+const productos = [  //TODO Arreglar: La ruta relativa de las imagenes, falla la carga de las mismas
     {
         id: 0,
         nombre: 'Doritos sabor queso',
         descripcion: 'Doritos comunes, clasico, 80 aire 20 papitas',
         precio: 800,
         imagen: '../../res/img/productos/doritos1.webp',
-        categoria: 'suave',
+        categoria: 'normal',
     },
     {
         id: 1,
@@ -39,7 +39,7 @@ const productos = [
         descripcion: 'Doritos comunes, clasico, 80 aire 20 papitas',
         precio: 850,
         imagen: '../../res/img/productos/doritos5.webp',
-        categoria: 'picante',
+        categoria: 'suave',
     },
     {
         id: 5,
